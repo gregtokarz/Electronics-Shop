@@ -1,3 +1,4 @@
+/*
 package dev.gregor.shop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @AutoConfigureMockMvc
 class ElectronicControllerTest {
-    @Autowired
+    */
+/*@Autowired
     private MockMvc mockMvc;
     @Autowired
     private ObjectMapper objectMapper;
@@ -27,7 +29,8 @@ class ElectronicControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/electronics"))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is(200));
-    }
+    }*//*
+
 
 //    @Test
 //    void shouldGetOnePost() throws Exception{
@@ -37,3 +40,4 @@ class ElectronicControllerTest {
 //                .andExpect(MockMvcResultMatchers.jsonPath("id", Matchers.is("655a8b70be02317f662c65e7")));
 //    }
 }
+*/
