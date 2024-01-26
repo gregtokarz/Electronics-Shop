@@ -7,14 +7,18 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "electronics")
+@Document(collection = "shop")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Electronic {
     @Id
     private ObjectId id;
+    private String electronicId;
     private String name;
-    private String link;
-    private String price;
+    private String category;
+    private String image;
+    private String new_price;
+    private String old_price;
+    private String description;
 }

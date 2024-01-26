@@ -1,6 +1,5 @@
 package dev.gregor.shop;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,23 @@ public class ElectronicService {
     }
 
 
-    public Optional<Electronic> singleElectronic(ObjectId id) {
-        return electronicRepository.findById(id);
+    public Optional<Electronic> singleElectronic(String electronicId) {
+
+        return electronicRepository.findByElectronicId(electronicId);
+    }
+
+    public boolean deleteObjectById(String electronicId) {
+        // Sprawdzanie, czy obiekt istnieje
+        if (electronicRepository.findByElectronicId(electronicId).isPresent()) {
+            electronicRepository.deleteByElectronicId(electronicId);
+            return true; // Obiekt został usunięty pomyślnie
+        } else {
+            return false; // Obiekt o podanym id nie został znaleziony
+        }
+    }
+
+    public void saveElectronic(Electronic electronic) {
+        // Dodawanie nowego obiektu Electronic do bazy danych
+        electronicRepository.save(electronic);
     }
 }
